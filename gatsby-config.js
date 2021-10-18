@@ -14,5 +14,14 @@ module.exports = {
 		},
 	},
 	"gatsby-plugin-mdx",
-  ],
+	{
+		resolve: "gatsby-source-wordpress",
+		options: {
+			url: `https://csc496wordpress.tldr.dev/graphql`,
+			protocol: `https`,
+			hostingWPCOM: false,
+			useACF: false
+		},
+	},
+  ]
 };

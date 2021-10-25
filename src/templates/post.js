@@ -18,13 +18,10 @@ Post.propTypes = {
 }
 export default Post
 export const pageQuery = graphql`
-  query MyQuery {
-	allWpPost {
-		nodes {
-			slug
-			id
-		}
-	}
-	}
-
-`
+  query($id: String!) {
+    wpPost(id: { eq: $id }) {
+      title
+      content
+    }
+  }
+` 

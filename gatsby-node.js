@@ -25,7 +25,8 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-
+// The pokemon section, wordpress stops working if uncomment this
+/*
 const axios = require("axios")
 const get = endpoint => axios.get(`https://pokeapi.co/api/v2${endpoint}`)
 const getPokemonData = names =>
@@ -43,3 +44,4 @@ exports.createPages = async ({ actions: { createPage } }) => {
     context: { allPokemon },
   })
 }
+*/

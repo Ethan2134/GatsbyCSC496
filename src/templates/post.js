@@ -16,7 +16,6 @@ Post.propTypes = {
   data: PropTypes.object.isRequired,
   edges: PropTypes.array,
 }
-export default Post
 export const pageQuery = graphql`
   query($id: String!) {
     wpPost(id: { eq: $id }) {
@@ -25,3 +24,5 @@ export const pageQuery = graphql`
     }
   }
 ` 
+export default Post
+

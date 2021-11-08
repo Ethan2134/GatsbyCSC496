@@ -1,10 +1,13 @@
 import React from "react"
 import Layout from '../components/layout'
+import { Link, useStaticQuery, graphql } from "gatsby"
+
 export default function AllPokemon({ pageContext: { allPokemon } }) {
+
   return (
-  <Layout pageTitle="Pokemon">
+  <Layout pageTitle="Starter Pokemon!">
     <div>
-      <ul>
+        <ul>
         {allPokemon.map(pokemon => (
           <li key={pokemon.id}>
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
@@ -13,6 +16,8 @@ export default function AllPokemon({ pageContext: { allPokemon } }) {
         ))}
       </ul>
     </div>
+	
 	</Layout>
   )
 }
+

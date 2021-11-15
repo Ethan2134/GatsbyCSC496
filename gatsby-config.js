@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
 	"gatsby-plugin-image",
 	"gatsby-plugin-sharp",
+	
 	{
 		resolve: "gatsby-source-filesystem",
 		options: {
@@ -13,7 +14,10 @@ module.exports = {
 			path: `${__dirname}/blog`,
 		},
 	},
+	
 	"gatsby-plugin-mdx",
+	'gatsby-plugin-styled-components',
+	
 	{
 		resolve: "gatsby-source-wordpress",
 		options: {
@@ -23,5 +27,19 @@ module.exports = {
 			useACF: false
 		},
 	},
+	
+	{
+        resolve: 'gatsby-plugin-react-leaflet',
+        options: {
+            linkStyles: true
+        }
+    },
+    {
+        resolve: `gatsby-theme-catalyst-core`,
+        options: {
+            remarkImagesWidth: 1920,
+            imageQuality: 90
+        }
+    }
   ]
 };

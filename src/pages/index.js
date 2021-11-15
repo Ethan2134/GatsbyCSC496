@@ -1,7 +1,10 @@
-import * as React from "react"
+import React, {useState} from "react"
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
-
+import { GlobalStyles } from '../components/globalStyles'
+import { light, dark } from '../components/themeLayout'
+import { ThemeProvider} from 'styled-components'
+/*
 // styles
 const pageStyles = {
   color: "#232129",
@@ -126,17 +129,24 @@ const links = [
     color: "#663399",
   },
 ]
-
+*/
 // markup
 const IndexPage = () => {
+	const [selectedTheme, setTheme] = useState('dark');
+	
+	const swapThemes = () => {selectedTheme === 'dark' ? setTheme('light') : setTheme('dark')}
   return (
+	<ThemeProvider theme={selectedTheme === 'dark' ? dark : light}>
     <Layout pageTitle="Home Page">
+	<GlobalStyles />
 		<p>I'm making this by following the Gatsby Tutorial</p>
 		<StaticImage
 			alt="Renly, a black and white lab, laying on the bed looking at the camera"
 			src="../images/Renly.jpg"
 		/>
+		<button onClick={swapThemes}>{selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)}</button>
 	</Layout>
+	</ThemeProvider>
   )
 }
 

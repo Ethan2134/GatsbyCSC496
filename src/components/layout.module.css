@@ -1,6 +1,6 @@
 .container {
   margin: auto;
-  max-width: 500px;
+  max-width: 800px;
   font-family: sans-serif;
 }
 .heading {
@@ -15,7 +15,7 @@
   padding-right: 2rem;
 }
 .nav-link-text {
-  color: black;
+  color: dodgerblue;
 }
 .site-title {
   font-size: 3rem;

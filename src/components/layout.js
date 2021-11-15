@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, {useState} from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
   container,
@@ -18,6 +18,8 @@ const Layout = ({ pageTitle, children }) => {
 			}
 		}
 	`)
+	
+	
   return (
     <div className={container}>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
@@ -50,6 +52,11 @@ const Layout = ({ pageTitle, children }) => {
 		  <li className={navLinkItem}>
 			<Link to="/pokemon/1" className={navLinkText}>
 				Hoenn Pokemon
+			</Link>
+		  </li>
+		  <li className={navLinkItem}>
+			<Link to="/map" className={navLinkText}>
+				Map
 			</Link>
 		  </li>
         </ul>

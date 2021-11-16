@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-/*
+
 //The pokemon section, wordpress stops working if uncomment this
 let starters = [1, 4, 7, 152, 155, 158, 252, 255, 258, 387, 390, 393, 495, 498, 501, 650, 653, 656]
 const axios = require("axios")
@@ -126,4 +126,3 @@ prev = "/pokemon/8";
     context: { pokesToGet, next, prev },
   })
 }
-*/

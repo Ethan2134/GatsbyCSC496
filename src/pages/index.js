@@ -133,7 +133,6 @@ const links = [
 // markup
 const IndexPage = () => {
 	const [selectedTheme, setTheme] = useState('dark');
-	
 	const swapThemes = () => {selectedTheme === 'dark' ? setTheme('light') : setTheme('dark')}
   return (
 	<ThemeProvider theme={selectedTheme === 'dark' ? dark : light}>

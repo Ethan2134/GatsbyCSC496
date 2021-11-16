@@ -8,7 +8,10 @@ import {
   navLinkText,
   siteTitle
 } from './layout.module.css'
-const Layout = ({ pageTitle, children }) => {
+import { GlobalStyles } from '../components/globalStyles'
+import { light, dark } from '../components/themeLayout'
+import { ThemeProvider} from 'styled-components'
+const Layout = ({ pageTitle, children}) => {
 	const data = useStaticQuery(graphql`
 		query{
 			site{
@@ -18,8 +21,6 @@ const Layout = ({ pageTitle, children }) => {
 			}
 		}
 	`)
-	
-	
   return (
     <div className={container}>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
@@ -28,7 +29,7 @@ const Layout = ({ pageTitle, children }) => {
 	  
         <ul className={navLinks}>
           <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
+            <Link to="/" className={navLinkText} >
               Home
             </Link>
           </li>
@@ -59,6 +60,7 @@ const Layout = ({ pageTitle, children }) => {
 				Map
 			</Link>
 		  </li>
+
         </ul>
       </nav>
       <main>
